@@ -1,0 +1,16 @@
+{
+    "name": "books",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "sass": "sass --watch ./styles:public/styles"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "node-sass": "^8.0.0",
+        "sass": "^1.58.0"
+    }
+}
