@@ -20,3 +20,39 @@ body
 	max-width: 1280px
 	margin: 0 auto
 	padding: 0 15px
+
+a.link--primary
+	font-weight: 600
+	position: relative
+	&::before
+		position: absolute
+		content: ""
+		width: 100%
+		height: 5px
+		bottom: 2px
+		right: 0
+		left: 0
+		background-color: $lightPurple
+		transition: all .2s ease
+		z-index: -1
+	&:hover::before
+		height: 100%
+		bottom: 0
+
+button.btn--primary
+	font-family: $fontIBM
+	font-weight: 600
+	border: none
+	cursor: pointer
+	text-align: center
+	background-color: $lightPurple
+	color: #fff
+	padding: 15px
+	-webkit-box-shadow: 8px 8px 0px -2px $shadowPurple
+	-moz-box-shadow: 8px 8px 0px -2px $shadowPurple
+	box-shadow: 8px 8px -2px $shadowPurple
+	transition: all .2s ease
+	&:hover
+		-webkit-box-shadow: 0 0 0px -2px $shadowPurple
+		-moz-box-shadow: 0 0 0px -2px $shadowPurple
+		box-shadow: 0 0 -2px $shadowPurple
