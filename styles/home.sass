@@ -1,6 +1,7 @@
 @import "./_global.sass"
 
 .header
+	z-index: 99
 	padding: 15px 0
 	color: #fff
 	position: sticky
@@ -55,13 +56,23 @@
 	&__photo
 		max-height: 50vh
 
+.popular
+	margin-top: 50px
+
+.popular__list
+	margin-top: 30px
+	display: flex
+	flex-wrap: wrap
+	gap: 20px
+	justify-content: center
+
 .about
 	margin-top: 50px
 	color: #fff
 	& .container
 		display: flex
 		flex-direction: column
-		gap: 20px 0
+		gap: 30px 0
 	&__description
 		line-height: 25px
 
