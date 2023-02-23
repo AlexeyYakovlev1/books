@@ -1,0 +1,82 @@
+@import "./_global"
+
+.content
+	flex: 1
+	margin-top: 20px
+	&__header
+		display: grid
+		grid-template-columns: minmax(auto, 500px) 1fr
+		gap: 0 20px
+		align-items: flex-start
+	& .container
+		display: flex
+		flex-direction: column
+		gap: 50px 0
+	&__section
+		color: #fff
+		&--list
+			display: flex
+			flex-direction: column
+			gap: 10px 0
+			margin-top: 25px
+
+.cover
+	display: flex
+	justify-content: center
+	background-color: $lightBlack
+	position: relative
+	&::before
+		content: ""
+		position: absolute
+		width: 100%
+		height: 100%
+		top: 0
+		left: 0
+		bottom: 0
+		right: 0
+		backdrop-filter: blur(2px)
+		background-color: rgba($lightBlack, .6)
+		transition: opacity .2s ease
+		opacity: 0
+
+.description
+	margin-top: 20px
+	line-height: 25px
+	font-size: 18px
+	color: #fff
+
+.about
+	color: #fff
+	&__header
+		display: flex
+		flex-direction: column
+		gap: 5px 0
+	&__name
+		font-weight: bold
+		font-size: 30px
+	&__author
+		font-size: 20px
+		font-style: italic
+	&__rating
+		display: flex
+		align-items: center
+		gap: 0 5px
+	&__nav
+		margin-top: 10px
+
+@media screen and (max-width: 1000px)
+	.content
+		&__header
+			grid-template-columns: none
+			grid-template-rows: 300px 1fr
+	.cover::before
+		opacity: 1
+	.about
+		background-color: $black
+		padding-top: 10px
+		z-index: 1
+		&__nav
+			display: flex
+			flex-direction: column
+			max-width: 80px
+			gap: 10px 0

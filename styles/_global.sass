@@ -6,6 +6,7 @@
 	box-sizing: border-box
 	list-style-type: none
 	outline: none
+	scroll-behavior: smooth
 
 a
 	color: inherit
@@ -15,6 +16,8 @@ body
 	font-family: $fontIBM
 	background-color: $black
 	min-height: 100vh
+	display: flex
+	flex-direction: column
 
 img
 	max-width: 100%
@@ -24,6 +27,59 @@ img
 	max-width: 1280px
 	margin: 0 auto
 	padding: 0 15px
+
+.header
+	z-index: 99
+	padding: 15px 0
+	color: #fff
+	position: sticky
+	top: 15px
+	background-color: rgba($black, .5)
+	backdrop-filter: blur(5px)
+	& .container
+		display: flex
+		justify-content: space-between
+		align-items: center
+	&__nav
+		display: flex
+		gap: 0 20px
+
+.header__title
+	font-family: $fontRedHat
+	font-size: 30px
+	position: relative
+	&::before
+		position: absolute
+		content: ""
+		height: 100%
+		bottom: 0
+		right: 0
+		left: 10px
+		background-color: $darkGreen
+		width: 10px
+		z-index: -1
+		transform: rotate(50deg)
+
+.section--title
+	text-transform: uppercase
+	font-weight: 400
+	font-family: $fontMetro
+	text-align: center
+	background-image: linear-gradient(to right, $lightPurple, $orange)
+	-webkit-background-clip: text
+	-webkit-text-fill-color: transparent
+
+.footer
+	margin-top: 150px
+	color: #fff
+	padding: 20px 0
+	& .container
+		display: flex
+		align-items: center
+		gap: 0 20px
+	&__title
+		color: $gray
+		display: block
 
 .lds-ellipsis
 	display: inline-block
@@ -87,23 +143,36 @@ a.link--primary
 		height: 100%
 		bottom: 0
 
-button.btn--primary
-	font-family: $fontIBM
-	font-weight: 600
-	border: none
-	cursor: pointer
-	text-align: center
-	background-color: $lightPurple
-	color: #fff
-	padding: 15px
-	-webkit-box-shadow: 8px 8px 0px -2px $shadowPurple
-	-moz-box-shadow: 8px 8px 0px -2px $shadowPurple
-	box-shadow: 8px 8px -2px $shadowPurple
-	transition: all .2s ease
-	&:hover
-		-webkit-box-shadow: 0 0 0px -2px $shadowPurple
-		-moz-box-shadow: 0 0 0px -2px $shadowPurple
-		box-shadow: 0 0 -2px $shadowPurple
+button
+	&.btn--primary
+		font-family: $fontIBM
+		font-weight: 600
+		border: none
+		cursor: pointer
+		text-align: center
+		background-color: $lightPurple
+		color: #fff
+		padding: 15px
+		-webkit-box-shadow: 8px 8px 0px -2px $shadowPurple
+		-moz-box-shadow: 8px 8px 0px -2px $shadowPurple
+		box-shadow: 8px 8px -2px $shadowPurple
+		transition: all .2s ease
+		&:hover
+			-webkit-box-shadow: 0 0 0px -2px $shadowPurple
+			-moz-box-shadow: 0 0 0px -2px $shadowPurple
+			box-shadow: 0 0 -2px $shadowPurple
+	&.btn--nav
+		border: none
+		cursor: pointer
+		border-radius: 8px
+		padding: 5px 10px
+		background-color: $orange
+		color: #fff
+		font-weight: 400
+		font-family: $fontIBM
+		transition: all .2s ease
+		&:hover
+			background-color: #D44646
 
 .card__book
 	flex-basis: 235px
@@ -153,3 +222,10 @@ button.btn--primary
 			left: 20px
 		& .card__book--cover::before
 			opacity: 1
+
+@media screen and (max-width: 500px)
+	.footer
+		& .container
+			flex-direction: column
+			align-items: baseline
+			gap: 5px 0
