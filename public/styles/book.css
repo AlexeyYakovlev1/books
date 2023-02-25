@@ -34,6 +34,14 @@ img {
   padding: 0 15px;
 }
 
+.loader {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 15px;
+  justify-content: center;
+  display: flex;
+}
+
 .header {
   z-index: 99;
   padding: 15px 0;
@@ -273,6 +281,7 @@ button.btn--nav:hover {
 .content {
   flex: 1;
   margin-top: 20px;
+  opacity: 0;
 }
 .content__header {
   display: grid;
