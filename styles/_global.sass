@@ -188,6 +188,14 @@ button
 	position: relative
 	&--photo
 		border-radius: 20px
+	&--author
+		font-style: italic
+	&--description
+		display: -webkit-box
+		-webkit-line-clamp: 3
+		-webkit-box-orient: vertical
+		overflow: hidden
+		text-overflow: ellipsis
 	&--cover
 		position: relative
 		&::before
@@ -213,8 +221,9 @@ button
 		border-radius: 20px
 		transition: all .2s ease
 		position: absolute
-		top: 0
-		left: 0
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
 	&--name
 		font-weight: bold
 		display: -webkit-box
@@ -225,8 +234,6 @@ button
 	&:hover
 		& .card__book--body
 			opacity: 1
-			top: 20px
-			left: 20px
 		& .card__book--cover::before
 			opacity: 1
 

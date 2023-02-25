@@ -27,7 +27,7 @@ promiseBooks.then((list) => {
 	}
 
 	popularity.forEach((book) => {
-		const { authors, image_url, title, id } = book;
+		const { authors, image_url, title, id, description } = book;
 		const $popularBook = `
 			<li class="popular__list-item card__book">
 				<div class="card__book--cover">
@@ -41,6 +41,7 @@ promiseBooks.then((list) => {
 					<span class="card__book--name">
 						<a href="./pages/book.html?id=${id}">${title}</a>
 					</span>
+					<p class="card__book--description">${description}</p>
 					<small class="card__book--author">${authors}</small>
 				</div>
 			</li>
