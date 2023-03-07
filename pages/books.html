@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../public/styles/books.css" />
+	<title>Список книг</title>
+</head>
+<body>
+	<header class="header">
+		<div class="container">
+			<span class="header__title">
+				<a href="../index.html">InBks</a>
+			</span>
+			<nav class="header__nav">
+				<a href="../index.html#about" class="link--primary">О нас</a>
+				<a href="./pages/books.html" class="link--primary">Поиск литературы</a>
+			</nav>
+		</div>
+	</header>
+	<div class="loader">
+		<div class="lds-ellipsis">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+	<main class="content">
+		<div class="container">
+			<ul class="list"></ul>
+			<button class="btn--nav hidden">Загрузить еще</button>
+		</div>
+	</main>
+	<footer class="footer">
+		<div class="container">
+			<span class="footer__title">© InBks</span>
+			<p class="footer__description">
+				Проект придумал и разработал
+				<a href="https://github.com/AlexeyYakovlev1" class="link--primary">Алексей Яковлев</a>
+			</p>
+		</div>
+	</footer>
+
+	<script src="../scripts/logics/Books.js"></script>
+	<script src="../scripts/books.js"></script>
+</body>
+</html>

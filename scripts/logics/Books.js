@@ -34,6 +34,11 @@ class Books {
 		return this.LIMIT;
 	}
 
+	set setLimit(count) {
+		this.LIMIT = count;
+		return;
+	}
+
 	// return loader
 	get getLoader() {
 		return this.loader;

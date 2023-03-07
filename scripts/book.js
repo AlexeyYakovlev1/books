@@ -1,4 +1,5 @@
 const books = new Books();
+
 const $coverImg = document.querySelector(".cover__img");
 const $aboutInfo = document.querySelectorAll("span[data-about]");
 const $content = document.querySelector(".content");
@@ -28,7 +29,5 @@ const $genresList = document.querySelector(".genres__list");
 
 		quoutes.map(quote => $quotesList.innerHTML += `<li>${quote}</li>`);
 		genres.map(genre => $genresList.innerHTML += `<li>${genre}</li>`);
-
-		console.log(data);
 	});
 })();
