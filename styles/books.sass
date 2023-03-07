@@ -1,19 +1,25 @@
 @import "./_global.sass"
 
 .content
-	margin-top: 20px
+	margin-top: 22px
 	flex: 1
-	opacity: 0
 	& .btn--nav
 		display: block
 		margin: 20px auto
-		&.hidden
-			display: none
+
+.hidden
+	display: none !important
+
+#titleNoFind
+	color: #fff
+	font-weight: 400
 
 .list
+	opacity: 0
 	display: flex
 	flex-direction: column
 	gap: 20px 0
+	margin-top: 20px
 	&__item
 		background-color: $lightBlack
 		color: #fff
@@ -64,13 +70,29 @@
 	align-items: center
 	cursor: pointer
 	border-radius: 50%
-	padding: 3px
+	padding: 2px
 	& svg
 		margin-top: 2px
+		width: 18px
+		height: 18px
 		& path
 			transition: all .2s ease
 	&:hover svg path
 		fill: $lightPurple !important
+
+.search
+	display: flex
+	flex-direction: column
+	gap: 10px 0
+	color: #fff
+	& input
+		background-color: $lightBlack
+		border: none
+		border-bottom: 1px solid $lightPurple
+		padding: 10px
+		color: #fff
+		max-width: 200px
+		font-family: $fontMetro
 
 @media screen and (max-width: 500px)
 	.list__item

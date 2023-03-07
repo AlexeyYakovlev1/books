@@ -19,17 +19,22 @@
 			</nav>
 		</div>
 	</header>
-	<div class="loader">
-		<div class="lds-ellipsis">
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-		</div>
-	</div>
 	<main class="content">
 		<div class="container">
+			<div class="search">
+				<span class="search--text">Поиск</span>
+				<input type="text" class="search--input" placeholder="Введите название книги..." />
+			</div>
+			<div class="loader">
+				<div class="lds-ellipsis">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
 			<ul class="list"></ul>
+			<h2 id="titleNoFind"></h2>
 			<button class="btn--nav hidden">Загрузить еще</button>
 		</div>
 	</main>

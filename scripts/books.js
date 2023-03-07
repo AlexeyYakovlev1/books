@@ -2,19 +2,59 @@ const books = new Books();
 
 const $list = document.querySelector(".list");
 const $loader = document.querySelector(".loader");
-const $content = document.querySelector(".content");
+const $searchInput = document.querySelector(".search--input");
+const $titleNoFind = document.querySelector("#titleNoFind");
 
-(function () {
+let copyBooks = [];
+
+document.addEventListener("DOMContentLoaded", () => {
 	const promiseBooks = books.getBooks();
 
 	promiseBooks.then((data) => {
 		if (!books.getLoader) {
 			$loader.style.display = "none";
-			$content.style.opacity = "1";
+			$list.style.opacity = "1";
 		}
 
-		data.forEach(({ id, title, description, rating, image_url }) => {
-			const $book = `
+		copyBooks = data;
+		renderList();
+	});
+})
+
+$searchInput.addEventListener("input", (event) => {
+	if (!copyBooks.length) return
+
+	const originValue = event.target.value;
+	const val = originValue.trim().toLowerCase();
+
+	if (!val) return;
+
+	$list.innerHTML = ``;
+
+	const result = copyBooks.filter((book) => book.title.toLowerCase().includes(val));
+
+	if (!result.length) {
+		console.log(1);
+		$titleNoFind.classList.remove("hidden");
+		$titleNoFind.textContent = `По запросу "${originValue}" ничего не найдено`;
+		return;
+	}
+
+	$titleNoFind.classList.add("hidden");
+
+	renderList(result);
+});
+
+$searchInput.addEventListener("keypress", (event) => {
+	if (event.keyCode === 13) {
+		$list.innerHTML = ``;
+		renderList();
+	}
+});
+
+function renderList(list = copyBooks) {
+	list.forEach(({ id, title, description, rating, image_url }) => {
+		const $book = `
 				<li class="list__item">
 					<div class="list__item--cover">
 						<img src="${image_url}" alt="book ${title}">
@@ -49,7 +89,6 @@ const $content = document.querySelector(".content");
 				</li>
 			`;
 
-			$list.innerHTML += $book;
-		});
+		$list.innerHTML += $book;
 	});
-})();
+}

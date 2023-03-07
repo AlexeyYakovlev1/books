@@ -288,22 +288,29 @@ button.btn--nav:hover {
   }
 }
 .content {
-  margin-top: 20px;
+  margin-top: 22px;
   flex: 1;
-  opacity: 0;
 }
 .content .btn--nav {
   display: block;
   margin: 20px auto;
 }
-.content .btn--nav.hidden {
-  display: none;
+
+.hidden {
+  display: none !important;
+}
+
+#titleNoFind {
+  color: #fff;
+  font-weight: 400;
 }
 
 .list {
+  opacity: 0;
   display: flex;
   flex-direction: column;
   gap: 20px 0;
+  margin-top: 20px;
 }
 .list__item {
   background-color: #27272A;
@@ -361,16 +368,34 @@ button.btn--nav:hover {
   align-items: center;
   cursor: pointer;
   border-radius: 50%;
-  padding: 3px;
+  padding: 2px;
 }
 #btnFavourite svg {
   margin-top: 2px;
+  width: 18px;
+  height: 18px;
 }
 #btnFavourite svg path {
   transition: all 0.2s ease;
 }
 #btnFavourite:hover svg path {
   fill: #7049C3 !important;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+  color: #fff;
+}
+.search input {
+  background-color: #27272A;
+  border: none;
+  border-bottom: 1px solid #7049C3;
+  padding: 10px;
+  color: #fff;
+  max-width: 200px;
+  font-family: "Metrophobic", sans-serif;
 }
 
 @media screen and (max-width: 500px) {
