@@ -1,0 +1,73 @@
+@import "./_global.sass"
+
+.content
+	flex: 1
+	margin-top: 20px
+
+.hidden
+	display: none
+
+.list
+	display: flex
+	flex-direction: column
+	gap: 20px 0
+	&__item
+		background-color: $lightBlack
+		color: #fff
+		display: grid
+		grid-template-columns: 1fr 50px
+		gap: 0 20px
+		position: relative
+		align-items: center
+		justify-content: space-between
+		&--left
+			display: grid
+			grid-template-columns: minmax(auto, 200px) minmax(auto, 800px)
+			gap: 0 20px
+			align-items: center
+		&--cover
+			display: flex
+			justify-content: center
+			background-color: $lightBlack
+		&--body
+			display: flex
+			flex-direction: column
+			gap: 10px 0
+			padding-right: 20px
+		&--title
+			max-width: 600px
+			font-weight: bold
+			font-size: 30px
+			display: -webkit-box
+			-webkit-line-clamp: 1
+			-webkit-box-orient: vertical
+			overflow: hidden
+			text-overflow: ellipsis
+		&--rating
+			display: flex
+			align-items: center
+		&--description
+			line-height: 25px
+			font-size: 18px
+			display: -webkit-box
+			-webkit-line-clamp: 3
+			-webkit-box-orient: vertical
+			overflow: hidden
+			text-overflow: ellipsis
+		&--remove
+			cursor: pointer
+			font-size: 20px
+			user-select: none
+
+.title--empty
+	color: #fff
+
+@media screen and (max-width: 500px)
+	.list__item
+		padding: 10px
+		&--left
+			grid-template-columns: minmax(auto, 100px) 1fr
+		&--body
+			padding: 0
+		&--title
+			font-size: 18px

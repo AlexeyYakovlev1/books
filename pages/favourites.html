@@ -4,8 +4,8 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="../public/styles/books.css" />
-	<title>Список книг</title>
+	<link rel="stylesheet" href="../public/styles/favourites.css">
+	<title>Избранное</title>
 </head>
 <body>
 	<header class="header">
@@ -15,28 +15,15 @@
 			</span>
 			<nav class="header__nav">
 				<a href="../index.html#about" class="link--primary">О нас</a>
-				<a href="./pages/books.html" class="link--primary">Поиск литературы</a>
-				<a href="./favourites.html" class="link--primary">Избранное</a>
+				<a href="./books.html" class="link--primary">Поиск литературы</a>
+				<a href="#" class="link--primary">Избранное</a>
 			</nav>
 		</div>
 	</header>
 	<main class="content">
 		<div class="container">
-			<div class="search">
-				<span class="search--text">Поиск</span>
-				<input type="text" class="search--input" placeholder="Введите название книги..." />
-			</div>
-			<div class="loader">
-				<div class="lds-ellipsis">
-					<div></div>
-					<div></div>
-					<div></div>
-					<div></div>
-				</div>
-			</div>
+			<h2 class="title--empty hidden">Список пуст...</h2>
 			<ul class="list"></ul>
-			<h2 id="titleNoFind"></h2>
-			<button class="btn--nav hidden">Загрузить еще</button>
 		</div>
 	</main>
 	<footer class="footer">
@@ -48,9 +35,8 @@
 			</p>
 		</div>
 	</footer>
-
+	
 	<script src="../scripts/logics/Favourites.js"></script>
-	<script src="../scripts/logics/Books.js"></script>
-	<script src="../scripts/books.js"></script>
+	<script src="../scripts/favourites.js"></script>
 </body>
 </html>

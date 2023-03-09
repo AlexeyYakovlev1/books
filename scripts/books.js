@@ -1,4 +1,5 @@
 const books = new Books();
+const favourites = new Favourites();
 
 const $list = document.querySelector(".list");
 const $loader = document.querySelector(".loader");
@@ -19,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		copyBooks = data;
 		renderList();
 	});
-})
+});
 
 $searchInput.addEventListener("input", (event) => {
 	if (!copyBooks.length) return
@@ -76,7 +77,7 @@ function renderList(list = copyBooks) {
 						</div>
 						<p class="list__item--description">${description}</p>
 					</div>
-					<button id="btnFavourite">
+					<button id="btnFavourite" data-id="${id}">
 						<?xml version="1.0" encoding="UTF-8"?>
 						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25px" height="25px"
 							viewBox="0 0 25 25" version="1.1">
@@ -90,5 +91,15 @@ function renderList(list = copyBooks) {
 			`;
 
 		$list.innerHTML += $book;
+	});
+
+	// add to favourites
+	const $btnFavourite = document.querySelectorAll("#btnFavourite");
+
+	$btnFavourite.forEach(($btn) => {
+		$btn.addEventListener("click", () => {
+			const findBook = copyBooks.filter((book) => book.id.toString() === $btn.dataset.id.toString())[0];
+			favourites.add(findBook);
+		});
 	});
 }
