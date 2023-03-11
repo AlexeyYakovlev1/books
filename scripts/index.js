@@ -7,7 +7,6 @@ if (books.getLoader) {
 	$popularList.innerHTML = LOADER;
 }
 
-// generate number which divisible by 4
 function getRandomNum(limit = books.getLimit) {
 	let n = Math.floor(Math.random() * limit);
 
@@ -16,7 +15,6 @@ function getRandomNum(limit = books.getLimit) {
 	return n;
 }
 
-// render popularity list of books
 promiseBooks.then((list) => {
 	const end = getRandomNum();
 	const start = end - 4;

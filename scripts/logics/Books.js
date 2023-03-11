@@ -5,7 +5,6 @@ class Books {
 		this.loader = false;
 	}
 
-	// get books (limit)
 	async getBooks() {
 		this.loader = true;
 
@@ -17,7 +16,6 @@ class Books {
 		return data;
 	}
 
-	// get book by id
 	async getOneBook(id) {
 		this.loader = true;
 
@@ -29,7 +27,6 @@ class Books {
 		return data[0];
 	}
 
-	// return limit
 	get getLimit() {
 		return this.LIMIT;
 	}
@@ -39,7 +36,6 @@ class Books {
 		return;
 	}
 
-	// return loader
 	get getLoader() {
 		return this.loader;
 	}

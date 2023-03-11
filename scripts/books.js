@@ -93,7 +93,6 @@ function renderList(list = copyBooks) {
 		$list.innerHTML += $book;
 	});
 
-	// add to favourites
 	const $btnFavourite = document.querySelectorAll("#btnFavourite");
 
 	$btnFavourite.forEach(($btn) => {

@@ -47,9 +47,33 @@ img
 		display: flex
 		justify-content: space-between
 		align-items: center
+		position: relative
 	&__nav
 		display: flex
 		gap: 0 20px
+
+.mobile__menu
+	display: none
+	& svg
+		display: block
+		cursor: pointer
+		margin-left: auto
+	&--nav
+		position: absolute
+		width: 100%
+		background-color: rgba($black, .5)
+		backdrop-filter: blur(5px)
+		height: 120px
+		top: 73px
+		left: 0
+		right: 0
+		bottom: 0
+		z-index: 99
+		padding: 10px
+		& a
+			width: auto
+	&--item:not(:first-child)
+		margin-top: 15px
 
 .header__title
 	font-family: $fontRedHat
@@ -181,6 +205,9 @@ button
 		&:hover
 			background-color: #D44646
 
+.hidden
+	display: none
+
 .card__book
 	flex-basis: 235px
 	color: #fff
@@ -238,6 +265,12 @@ button
 			opacity: 1
 
 @media screen and (max-width: 500px)
+	.mobile__menu
+		display: block
+
+	.header__nav
+		display: none
+
 	.footer
 		& .container
 			flex-direction: column

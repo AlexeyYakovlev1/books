@@ -55,10 +55,39 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 .header__nav {
   display: flex;
   gap: 0 20px;
+}
+
+.mobile__menu {
+  display: none;
+}
+.mobile__menu svg {
+  display: block;
+  cursor: pointer;
+  margin-left: auto;
+}
+.mobile__menu--nav {
+  position: absolute;
+  width: 100%;
+  background-color: rgba(25, 25, 27, 0.5);
+  backdrop-filter: blur(5px);
+  height: 120px;
+  top: 73px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  padding: 10px;
+}
+.mobile__menu--nav a {
+  width: auto;
+}
+.mobile__menu--item:not(:first-child) {
+  margin-top: 15px;
 }
 
 .header__title {
@@ -215,6 +244,10 @@ button.btn--nav:hover {
   background-color: #D44646;
 }
 
+.hidden {
+  display: none;
+}
+
 .card__book {
   flex-basis: 235px;
   color: #fff;
@@ -281,6 +314,12 @@ button.btn--nav:hover {
 }
 
 @media screen and (max-width: 500px) {
+  .mobile__menu {
+    display: block;
+  }
+  .header__nav {
+    display: none;
+  }
   .footer .container {
     flex-direction: column;
     align-items: baseline;
@@ -290,10 +329,6 @@ button.btn--nav:hover {
 .content {
   flex: 1;
   margin-top: 20px;
-}
-
-.hidden {
-  display: none;
 }
 
 .list {
