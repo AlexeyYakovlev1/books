@@ -399,11 +399,15 @@ button.btn--nav:hover {
   user-select: none;
 }
 
-.title--empty {
+.empty {
   color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .list__item {
     padding: 10px 0 10px 10px;
   }
@@ -415,6 +419,11 @@ button.btn--nav:hover {
   }
   .list__item--title {
     font-size: 18px;
+  }
+}
+@media screen and (max-width: 330px) {
+  .empty__title {
+    font-size: 19px;
   }
 }
 

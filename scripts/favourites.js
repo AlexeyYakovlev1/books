@@ -2,11 +2,11 @@ const favourites = new Favourites();
 const storage = favourites.getStorage;
 
 const $list = document.querySelector(".list");
-const $titleEmpty = document.querySelector(".title--empty");
+const $empty = document.querySelector(".empty");
 
 function checkStorage() {
 	if (!favourites.getStorage.length) {
-		$titleEmpty.classList.remove("hidden");
+		$empty.classList.remove("hidden");
 		$list.innerHTML = ``;
 	}
 }
