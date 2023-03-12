@@ -69,6 +69,7 @@ img {
   display: block;
   cursor: pointer;
   margin-left: auto;
+  user-select: none;
 }
 .mobile__menu--nav {
   position: absolute;
@@ -88,6 +89,12 @@ img {
 }
 .mobile__menu--item:not(:first-child) {
   margin-top: 15px;
+}
+.mobile__menu--close {
+  cursor: pointer;
+  color: #fff;
+  font-size: 18px;
+  user-select: none;
 }
 
 .header__title {
@@ -245,7 +252,7 @@ button.btn--nav:hover {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .card__book {
@@ -340,7 +347,7 @@ button.btn--nav:hover {
   background-color: #27272A;
   color: #fff;
   display: grid;
-  grid-template-columns: 1fr 50px;
+  grid-template-columns: 1fr 28px;
   gap: 0 20px;
   position: relative;
   align-items: center;
@@ -398,7 +405,7 @@ button.btn--nav:hover {
 
 @media screen and (max-width: 500px) {
   .list__item {
-    padding: 10px;
+    padding: 10px 0 10px 10px;
   }
   .list__item--left {
     grid-template-columns: minmax(auto, 100px) 1fr;

@@ -69,6 +69,7 @@ img {
   display: block;
   cursor: pointer;
   margin-left: auto;
+  user-select: none;
 }
 .mobile__menu--nav {
   position: absolute;
@@ -88,6 +89,12 @@ img {
 }
 .mobile__menu--item:not(:first-child) {
   margin-top: 15px;
+}
+.mobile__menu--close {
+  cursor: pointer;
+  color: #fff;
+  font-size: 18px;
+  user-select: none;
 }
 
 .header__title {
@@ -245,7 +252,7 @@ button.btn--nav:hover {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .card__book {
@@ -357,6 +364,9 @@ button.btn--nav:hover {
   justify-content: center;
   background-color: #27272A;
   position: relative;
+}
+.cover img {
+  max-height: 486px;
 }
 .cover::before {
   content: "";

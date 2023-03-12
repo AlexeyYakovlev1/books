@@ -58,6 +58,7 @@ img
 		display: block
 		cursor: pointer
 		margin-left: auto
+		user-select: none
 	&--nav
 		position: absolute
 		width: 100%
@@ -74,6 +75,11 @@ img
 			width: auto
 	&--item:not(:first-child)
 		margin-top: 15px
+	&--close
+		cursor: pointer
+		color: #fff
+		font-size: 18px
+		user-select: none
 
 .header__title
 	font-family: $fontRedHat
@@ -206,7 +212,7 @@ button
 			background-color: #D44646
 
 .hidden
-	display: none
+	display: none !important
 
 .card__book
 	flex-basis: 235px
