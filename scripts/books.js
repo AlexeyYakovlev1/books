@@ -8,18 +8,16 @@ const $titleNoFind = document.querySelector("#titleNoFind");
 
 let copyBooks = [];
 
-document.addEventListener("DOMContentLoaded", () => {
-	const promiseBooks = books.getBooks();
+const promiseBooks = books.getBooks();
 
-	promiseBooks.then((data) => {
-		if (!books.getLoader) {
-			$loader.style.display = "none";
-			$list.style.opacity = "1";
-		}
+promiseBooks.then((data) => {
+	if (!books.getLoader) {
+		$loader.style.display = "none";
+		$list.style.opacity = "1";
+	}
 
-		copyBooks = data;
-		renderList();
-	});
+	copyBooks = data;
+	renderList();
 });
 
 $searchInput.addEventListener("input", (event) => {
@@ -35,7 +33,6 @@ $searchInput.addEventListener("input", (event) => {
 	const result = copyBooks.filter((book) => book.title.toLowerCase().includes(val));
 
 	if (!result.length) {
-		console.log(1);
 		$titleNoFind.classList.remove("hidden");
 		$titleNoFind.textContent = `По запросу "${originValue}" ничего не найдено`;
 		return;

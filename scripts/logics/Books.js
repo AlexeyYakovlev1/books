@@ -1,5 +1,7 @@
-class Books {
+class Books extends Favourites {
 	constructor() {
+		super();
+
 		this.LIMIT = 50;
 		this.API_URL = `https://example-data.draftbit.com/books`;
 		this.loader = false;
@@ -10,6 +12,8 @@ class Books {
 
 		const response = await fetch(`${this.API_URL}?_limit=${this.LIMIT}`, { method: "GET" });
 		const data = await response.json();
+
+		console.log(this.getStorage);
 
 		this.loader = false;
 
