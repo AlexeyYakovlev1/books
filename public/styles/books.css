@@ -412,6 +412,12 @@ button.btn--nav:hover {
   border-radius: 50%;
   padding: 2px;
 }
+#btnFavourite[data-favourite] svg path {
+  fill: #7049C3 !important;
+}
+#btnFavourite[data-favourite]:hover svg path {
+  fill: #19191B !important;
+}
 #btnFavourite svg {
   margin-top: 2px;
   width: 18px;

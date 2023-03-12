@@ -51,7 +51,7 @@ $searchInput.addEventListener("keypress", (event) => {
 });
 
 function renderList(list = copyBooks) {
-	list.forEach(({ id, title, description, rating, image_url }) => {
+	list.forEach(({ id, title, description, rating, image_url, favourite }) => {
 		const $book = `
 				<li class="list__item">
 					<div class="list__item--cover">
@@ -74,7 +74,7 @@ function renderList(list = copyBooks) {
 						</div>
 						<p class="list__item--description">${description}</p>
 					</div>
-					<button id="btnFavourite" data-id="${id}">
+					<button id="btnFavourite" data-id="${id}" ${favourite ? 'data-favourite="true"' : ""}>
 						<?xml version="1.0" encoding="UTF-8"?>
 						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25px" height="25px"
 							viewBox="0 0 25 25" version="1.1">
@@ -94,8 +94,16 @@ function renderList(list = copyBooks) {
 
 	$btnFavourite.forEach(($btn) => {
 		$btn.addEventListener("click", () => {
-			const findBook = copyBooks.filter((book) => book.id.toString() === $btn.dataset.id.toString())[0];
-			favourites.add(findBook);
+			const favouriteBook = !!$btn.dataset.favourite;
+
+			if (favouriteBook) {
+				$btn.removeAttribute("data-favourite");
+				favourites.remove($btn.dataset.id);
+			} else {
+				$btn.dataset.favourite = "true";
+				const findBook = copyBooks.filter((book) => book.id.toString() === $btn.dataset.id.toString())[0];
+				favourites.add(findBook);
+			}
 		});
 	});
 }

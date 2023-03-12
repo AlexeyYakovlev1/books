@@ -7,7 +7,7 @@ class Favourites {
 		return JSON.parse(localStorage.getItem("storage") || "[]");
 	}
 
-	_updateStorage() {
+	_updateLocalStorage() {
 		localStorage.setItem("storage", JSON.stringify(this.storage));
 	}
 
@@ -26,7 +26,7 @@ class Favourites {
 
 	add(book) {
 		this.storage.push(book);
-		this._updateStorage();
+		this._updateLocalStorage();
 	}
 
 	remove(id) {

@@ -68,6 +68,11 @@
 	cursor: pointer
 	border-radius: 50%
 	padding: 2px
+	&[data-favourite]
+		& svg path
+			fill: $lightPurple !important
+		&:hover svg path
+			fill: $black !important
 	& svg
 		margin-top: 2px
 		width: 18px

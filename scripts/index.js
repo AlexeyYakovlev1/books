@@ -1,7 +1,6 @@
 const $popularList = document.querySelector(".popular__list");
 
 const books = new Books();
-const favourites = new Favourites();
 const promiseBooks = books.getBooks();
 
 if (books.getLoader) {
@@ -15,8 +14,6 @@ function getRandomNum(limit = books.getLimit) {
 
 	return n;
 }
-
-console.log(favourites.getStorage);
 
 promiseBooks.then((list) => {
 	const end = getRandomNum();
