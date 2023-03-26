@@ -415,19 +415,10 @@ button.btn--nav:hover {
 #btnFavourite[data-favourite] svg path {
   fill: #7049C3 !important;
 }
-#btnFavourite[data-favourite]:hover svg path {
-  fill: #19191B !important;
-}
 #btnFavourite svg {
   margin-top: 2px;
   width: 18px;
   height: 18px;
-}
-#btnFavourite svg path {
-  transition: all 0.2s ease;
-}
-#btnFavourite:hover svg path {
-  fill: #7049C3 !important;
 }
 
 .search {

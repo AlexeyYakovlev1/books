@@ -12,9 +12,11 @@ const currentIdBook = parseInt(queryId.split("=").pop());
 const promiseBookes = books.getOneBook(currentIdBook);
 
 promiseBookes.then((data) => {
-	const { image_url, Quote1, Quote2, Quote3, genre_list } = data;
+	const { image_url, Quote1, Quote2, Quote3, genre_list, title } = data;
 	const quoutes = [Quote1, Quote2, Quote3];
 	const genres = genre_list.split(",");
+
+	document.title = title;
 
 	if (!books.getLoader) {
 		$coverImg.src = image_url

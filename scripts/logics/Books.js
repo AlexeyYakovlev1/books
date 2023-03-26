@@ -23,7 +23,12 @@ class Books extends Favourites {
 	async getBooks() {
 		this.loader = true;
 
-		const response = await fetch(`${this.API_URL}?_limit=${this.LIMIT}`, { method: "GET" });
+		const response = await fetch(`${this.API_URL}?_limit=${this.LIMIT}`, {
+			method: "GET",
+			headers: {
+				"Access-Control-Allow-Origin": "*"
+			}
+		});
 		const data = await response.json();
 
 		this._checkFavouriteBook(data);
@@ -36,7 +41,12 @@ class Books extends Favourites {
 	async getOneBook(id) {
 		this.loader = true;
 
-		const response = await fetch(`${this.API_URL}?id=${id}`, { method: "GET" });
+		const response = await fetch(`${this.API_URL}?id=${id}`, {
+			method: "GET",
+			headers: {
+				"Access-Control-Allow-Origin": "*"
+			}
+		});
 		const data = await response.json();
 
 		this.loader = false;
