@@ -26,7 +26,8 @@ class Books extends Favourites {
 		const response = await fetch(`${this.API_URL}?_limit=${this.LIMIT}`, {
 			method: "GET",
 			headers: {
-				"Access-Control-Allow-Origin": "*"
+				"Access-Control-Allow-Origin": "*",
+				"Access-Control-Allow-Methods": "GET"
 			}
 		});
 		const data = await response.json();
@@ -44,7 +45,8 @@ class Books extends Favourites {
 		const response = await fetch(`${this.API_URL}?id=${id}`, {
 			method: "GET",
 			headers: {
-				"Access-Control-Allow-Origin": "*"
+				"Access-Control-Allow-Origin": "*",
+				"Access-Control-Allow-Methods": "GET"
 			}
 		});
 		const data = await response.json();
